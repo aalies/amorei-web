@@ -153,7 +153,7 @@ with gr.Blocks(theme='shivi/calm_seafoam',title="KI Heizungsoptimierung") as dem
   with gr.Row():
     gr.HTML("""
   <div style="background-color: #fffacd; border: 1px solid #eedc82; padding: 20px; margin: 20px; border-radius: 5px; color: #8b4513; font-weight: bold; text-align: center;">
-    <img src="images/logo_amorei.jpg" alt="Amorei Logo" style="height:60px; vertical-align:middle; margin-right:15px;">
+    <img src="/static/images/logo_amorei.jpg" alt="Amorei Logo" style="height:60px; vertical-align:middle; margin-right:15px;">
     <span style="margin-right: 10px;">⚠️</span>
     Achtung: Diese App ist nur für Demozwecke bestimmt und unterstützt noch keine User Access Control. Bitte vermeiden Sie die Verwendung sensibler Daten.
   </div>""")
