@@ -123,37 +123,37 @@ Ensure your advice is practical, considers the German context, and includes refe
 with gr.Blocks(theme='shivi/calm_seafoam',title="KI Heizungsoptimierung") as demo:
     gr.HTML('<img src="/static/images/logo_amorei.jpg" alt="Amorei Logo" style="height:60px;">')
     gr.HTML("<h1><strong>A</strong>more<strong>I</strong> - ihr KI-gestützter Heizungsberater</h1>")
-  with gr.Row():
-    with gr.Column(scale=1):
-      with gr.Row():
-        gr.HTML("<h2>Willkommen in der Heizungsberater KI Demo!</h2>")
-      with gr.Row():
-        gr.HTML("""Die KI Heizungsoptimierung ist ein KI-gestützter virtueller Heizungsberater, der Ihnen hilft, die besten Heizungsoptionen für Ihr Zuhause zu finden. Sie können Fragen zu Heizsystemen, Energieeffizienz und Fördermöglichkeiten stellen. Die KI wird Ihnen basierend auf Ihren Eingaben maßgeschneiderte Empfehlungen geben.
+    with gr.Row():  # Korrekte Einrückung auf gleicher Ebene wie die gr.HTML Aufrufe
+        with gr.Column(scale=1):
+            with gr.Row():
+                gr.HTML("<h2>Willkommen in der Heizungsberater KI Demo!</h2>")
+            with gr.Row():
+                gr.HTML("""Die KI Heizungsoptimierung ist ein KI-gestützter virtueller Heizungsberater, der Ihnen hilft, die besten Heizungsoptionen für Ihr Zuhause zu finden. Sie können Fragen zu Heizsystemen, Energieeffizienz und Fördermöglichkeiten stellen. Die KI wird Ihnen basierend auf Ihren Eingaben maßgeschneiderte Empfehlungen geben.
                 Sie können die KI auch nach den besten Heizsystemen für Ihr Zuhause fragen, wie z.B. Wärmepumpen, Gasbrennwertheizungen oder Solarthermie. Die KI wird Ihnen auch Informationen zu den aktuellen Förderprogrammen des BAFA und der KfW geben, um Ihnen bei der Finanzierung Ihrer Heizungsoptimierung zu helfen.
                 <br><br>
                 <strong>Beispiel:</strong> Fragen Sie die KI nach den besten Heizsystemen für Ihr Zuhause, wie z.B. Wärmepumpen, Gasbrennwertheizungen oder Solarthermie. Die KI wird Ihnen auch Informationen zu den aktuellen Förderprogrammen des BAFA und der KfW geben, um Ihnen bei der Finanzierung Ihrer Heizungsoptimierung zu helfen.
                 <br><br>
                 Nutzen Sie auch die Möglichkeit, Dateien wie Bilder oder PDFs hochzuladen, um Ihre Fragen zu verdeutlichen. Die KI wird diese Dateien analysieren und Ihnen basierend auf den Inhalten der Dateien maßgeschneiderte Empfehlungen geben.""")
-    with gr.Column(scale=2, variant="panel"):
-      gr.ChatInterface(
-          fn=generate,
-          title="KI Heizungsoptimierung",
-          type="messages",
-          editable=True,
-          multimodal=True,
-          examples=[
-          "Ich möchte mein altes Heizsystem austauschen. Was sind die besten Optionen für ein energieeffizientes System in meinem Einfamilienhaus?", 
-          "Kann ich eine Solaranlange auf meiner 40 qm Terasse im ersten Stock eines Mietshauses installieren?",
-          "Ich möchte mein elektrisch betriebenes Auto über Nacht laden mit ökologischem Strom. Was benötige ich dafür und wird das gefördert?",
-          "Welche Förderungen gibt es für die Installation einer Wärmepumpe in meinem Einfamilienhaus?",
-          "Wie kann ich den Energieverbrauch meiner Heizungsanlage optimieren?",
-          "Welche Vorteile bietet eine Solaranlage eigentlich für mein Einfamilienhaus?"
-          ],
-          cache_examples=False # True gibt Fehler aus wegen Verzeichnisberechtigungen
-      )
-  with gr.Row():
-    gr.HTML("""
-  <div style="background-color: #fffacd; border: 1px solid #eedc82; padding: 20px; margin: 20px; border-radius: 5px; color: #8b4513; font-weight: bold; text-align: center;">
+        with gr.Column(scale=2, variant="panel"):
+            gr.ChatInterface(
+                fn=generate,
+                title="KI Heizungsoptimierung",
+                type="messages",
+                editable=True,
+                multimodal=True,
+                examples=[
+                "Ich möchte mein altes Heizsystem austauschen. Was sind die besten Optionen für ein energieeffizientes System in meinem Einfamilienhaus?", 
+                "Kann ich eine Solaranlange auf meiner 40 qm Terasse im ersten Stock eines Mietshauses installieren?",
+                "Ich möchte mein elektrisch betriebenes Auto über Nacht laden mit ökologischem Strom. Was benötige ich dafür und wird das gefördert?",
+                "Welche Förderungen gibt es für die Installation einer Wärmepumpe in meinem Einfamilienhaus?",
+                "Wie kann ich den Energieverbrauch meiner Heizungsanlage optimieren?",
+                "Welche Vorteile bietet eine Solaranlage eigentlich für mein Einfamilienhaus?"
+                ],
+                cache_examples=False # True gibt Fehler aus wegen Verzeichnisberechtigungen
+            )
+    with gr.Row():
+        gr.HTML("""
+        <div style="background-color: #fffacd; border: 1px solid #eedc82; padding: 20px; margin: 20px; border-radius: 5px; color: #8b4513; font-weight: bold; text-align: center;">
     <img src="/static/images/logo_amorei.jpg" alt="Amorei Logo" style="height:60px; vertical-align:middle; margin-right:15px;">
     <span style="margin-right: 10px;">⚠️</span>
     Achtung: Diese App ist nur für Demozwecke bestimmt und unterstützt noch keine User Access Control. Bitte vermeiden Sie die Verwendung sensibler Daten.
