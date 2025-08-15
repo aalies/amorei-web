@@ -121,6 +121,7 @@ Ensure your advice is practical, considers the German context, and includes refe
         yield results
 
 with gr.Blocks(theme='shivi/calm_seafoam',title="KI Heizungsoptimierung") as demo:
+    gr.HTML('<img src="/static/images/logo_amorei.jpg" alt="Amorei Logo" style="height:60px;">')
   with gr.Row():
     with gr.Column(scale=1):
       with gr.Row():
@@ -156,4 +157,4 @@ with gr.Blocks(theme='shivi/calm_seafoam',title="KI Heizungsoptimierung") as dem
     <span style="margin-right: 10px;">⚠️</span>
     Achtung: Diese App ist nur für Demozwecke bestimmt und unterstützt noch keine User Access Control. Bitte vermeiden Sie die Verwendung sensibler Daten.
   </div>""")
-  demo.launch(show_error=True)
+  demo.launch(show_error=True, static_dir="static")
