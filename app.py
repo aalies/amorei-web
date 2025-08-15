@@ -158,4 +158,5 @@ with gr.Blocks(theme='shivi/calm_seafoam',title="KI Heizungsoptimierung") as dem
     <span style="margin-right: 10px;">⚠️</span>
     Achtung: Diese App ist nur für Demozwecke bestimmt und unterstützt noch keine User Access Control. Bitte vermeiden Sie die Verwendung sensibler Daten.
   </div>""")
-  demo.launch(show_error=True, static_dir="static")
+  gr.set_static_paths(paths=["static"])
+  demo.launch(show_error=True)
