@@ -14,6 +14,7 @@ from google.genai import types
 import gradio as gr
 import utils
 
+gr.set_static_paths(paths=["static/"])
 
 def generate(
     message,
@@ -119,9 +120,9 @@ Ensure your advice is practical, considers the German context, and includes refe
       )
       if results:
         yield results
-gr.set_static_paths(paths=["static/images/"])
+
 with gr.Blocks(theme='shivi/calm_seafoam',title="KI Heizungsoptimierung") as demo:
-    gr.HTML('<img src="/static/images/logo_amorei.jpg" alt="Amorei Logo" style="height:60px;">')
+    gr.HTML('<img src="static/images/amorei.jpg" alt="Amorei Logo" style="height:60px;">')
     gr.HTML("<h1><strong>A</strong>more<strong>I</strong> - ihr KI-gestützter Heizungsberater</h1>")
     with gr.Row():  # Korrekte Einrückung auf gleicher Ebene wie die gr.HTML Aufrufe
         with gr.Column(scale=1):
@@ -154,9 +155,9 @@ with gr.Blocks(theme='shivi/calm_seafoam',title="KI Heizungsoptimierung") as dem
     with gr.Row():
         gr.HTML("""
         <div style="background-color: #fffacd; border: 1px solid #eedc82; padding: 20px; margin: 20px; border-radius: 5px; color: #8b4513; font-weight: bold; text-align: center;">
-    <img src="/static/images/logo_amorei.jpg" alt="Amorei Logo" style="height:60px; vertical-align:middle; margin-right:15px;">
+    <img src="/static/images/amorei.jpg" alt="Amorei Logo" style="height:60px; vertical-align:middle; margin-right:15px;">
     <span style="margin-right: 10px;">⚠️</span>
-    Achtung: Diese App ist nur für Demozwecke bestimmt und unterstützt noch keine User Access Control. Bitte vermeiden Sie die Verwendung sensibler Daten.
+    Achtung: Diese App ist nur für Demozwecke bestimmt. Bitte vermeiden Sie die Verwendung sensibler Daten.
   </div>""")
 
-demo.launch(show_error=True)
+demo.launch(show_error=True, debug=True)
