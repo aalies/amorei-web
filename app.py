@@ -119,7 +119,7 @@ Ensure your advice is practical, considers the German context, and includes refe
       )
       if results:
         yield results
-
+gr.set_static_paths(paths=["static/images/"])
 with gr.Blocks(theme='shivi/calm_seafoam',title="KI Heizungsoptimierung") as demo:
     gr.HTML('<img src="/static/images/logo_amorei.jpg" alt="Amorei Logo" style="height:60px;">')
     gr.HTML("<h1><strong>A</strong>more<strong>I</strong> - ihr KI-gestützter Heizungsberater</h1>")
@@ -159,5 +159,4 @@ with gr.Blocks(theme='shivi/calm_seafoam',title="KI Heizungsoptimierung") as dem
     Achtung: Diese App ist nur für Demozwecke bestimmt und unterstützt noch keine User Access Control. Bitte vermeiden Sie die Verwendung sensibler Daten.
   </div>""")
 
-gr.set_static_paths(paths=["static"])
 demo.launch(show_error=True)
